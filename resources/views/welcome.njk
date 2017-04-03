@@ -14,7 +14,7 @@
     3 <input name="files" type="file" /><br />
     <input type="submit" />
   {{ form.close() }}
-  
+  <hr />
   <h1>With []</h1>
   {{ form.open({ action: 'TestController.print2', files: true }) }}
     {{ csrfField }}
