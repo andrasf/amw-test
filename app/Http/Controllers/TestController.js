@@ -8,12 +8,14 @@ class TestController {
   * print1 (request,response) {
     const texts = request.input('texts')
     const files = request.file('files').map( (file) => { return { size: file.clientSize(), name: file.clientName() }  } )
+    console.log(request.files('files'))
     yield response.sendView('output', { texts, files })
   }
   
   * print2 (request,response) {
     const texts = request.input('texts[]')
     const files = request.file('files[]').map( (file) => { return { size: file.clientSize(), name: file.clientName() }  } )
+    console.log(request.files('files'))
     yield response.sendView('output', { texts, files })
   }
   
