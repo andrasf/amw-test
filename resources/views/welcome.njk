@@ -1,0 +1,31 @@
+{% extends 'master' %}
+
+{% block content %}
+  <h1>Without []</h1>
+  {{ form.open({ action: 'TestController.print1', files: true }) }}
+    {{ csrfField }}
+    <b>Text values</b><br />
+    1 <input name="texts" value="1&2" /><br />
+    2 <input name="texts" value="2&amp;2" /><br />
+    3 <input name="texts" value="3&2" /><br />
+    <b>Files</b><br />
+    1 <input name="files" type="file" /><br />
+    2 <input name="files" type="file" /><br />
+    3 <input name="files" type="file" /><br />
+    <input type="submit" />
+  {{ form.close() }}
+  
+  <h1>With []</h1>
+  {{ form.open({ action: 'TestController.print2', files: true }) }}
+    {{ csrfField }}
+    <b>Text values</b><br />
+    1 <input name="texts[]" value="1&2" /><br />
+    2 <input name="texts[]" value="2&amp;2" /><br />
+    3 <input name="texts[]" value="3&2" /><br />
+    <b>Files</b><br />
+    1 <input name="files[]" type="file" /><br />
+    2 <input name="files[]" type="file" /><br />
+    3 <input name="files[]" type="file" /><br />
+    <input type="submit" />
+  {{ form.close() }}
+{% endblock %}

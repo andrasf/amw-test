@@ -1,0 +1,12 @@
+{% extends 'master' %}
+
+{% block content %}
+  <b>Text values</b><br />
+  1. = {{ texts[0] }}<br />
+  2. = {{ texts[1] }}<br />
+  3. = {{ texts[2] }}<br />
+  <b>Files</b><br />
+  1. = {{ files[0].name }}, size: {{ files[0].size }}<br />
+  2. = {{ files[1].name }}, size: {{ files[1].size }}<br />
+  3. = {{ files[2].name }}, size: {{ files[2].size }}<br />
+{% endblock %}
